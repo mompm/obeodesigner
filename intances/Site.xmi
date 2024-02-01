@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projet:Site
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:projet="http://fr.ubo.iliade.bideau.projet"
+    xsi:schemaLocation="http://fr.ubo.iliade.bideau.projet ../model/projet.ecore">
+  <carte/>
+  <graphique/>
+  <graphique/>
+  <point/>
+  <point/>
+  <point/>
+  <operation
+      point="//@point.0 //@point.1"/>
+  <operation/>
+</projet:Site>

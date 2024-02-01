@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="projet" nsURI="http://fr.ubo.iliade.bideau.projet" nsPrefix="projet">
+  <eClassifiers xsi:type="ecore:EClass" name="Graphique">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="#//operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Carte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlatitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" lowerBound="2" upperBound="-1"
+        eType="#//point"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlongitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlatidute" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlongitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Site">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="carte" lowerBound="1" eType="#//Carte"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphique" upperBound="-1"
+        eType="#//Graphique" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" lowerBound="2" upperBound="-1"
+        eType="#//point" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        upperBound="-1" eType="#//operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" upperBound="-1"
+        eType="#//point"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="point">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+  </eClassifiers>
+</ecore:EPackage>
