@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="projet" nsURI="http://fr.ubo.iliade.bideau.projet" nsPrefix="projet">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore.xml.type" value="http://www.eclipse.org/emf/2003/XMLType"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Graphique">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="borneNom borneX borneY"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="borneNom" value="&#xA;&#x9;&#x9;&#x9;Nom.size() &lt; 255"/>
+      <details key="borneX" value="&#xA;&#x9;&#x9;&#x9;x.size() &lt; 20"/>
+      <details key="borneY" value="&#xA;&#x9;&#x9;&#x9;y.size() &lt; 20"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="#//operation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Carte">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="bornelatitudecarte bornelongitudecarte"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="bornelatitudecarte" value="&#xA;&#x9;&#x9;&#x9;(minlatidute &lt;= 170) and &#xA;&#x9;&#x9;&#x9;(minlatidute >=-180) and &#xA;&#x9;&#x9;&#x9;(maxlatitude &lt;= 180) and &#xA;&#x9;&#x9;&#x9;(maxlatitude >= -170) and &#xA;&#x9;&#x9;&#x9;(maxlatitude > minlatidute)"/>
+      <details key="bornelongitudecarte" value="&#xA;&#x9;&#x9;&#x9;(minlongitude &lt;= 80) and &#xA;&#x9;&#x9;&#x9;(minlongitude >= -90) and &#xA;&#x9;&#x9;&#x9;(maxlongitude &lt;= 90) and &#xA;&#x9;&#x9;&#x9;(maxlongitude >= -80) and &#xA;&#x9;&#x9;&#x9;(maxlongitude > minlongitude)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlatitude" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="point" lowerBound="2" upperBound="-1"
         eType="#//point"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlongitude" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlatidute" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlongitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlatidute" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minlongitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Site">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="nodoublenamegraph"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="nodoublenamegraph" value="&#xA;&#x9;&#x9;&#x9;graphique ->forAll(g1,g2 | g1&lt;> g2 implies g1.Nom &lt;> g2.Nom)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="carte" lowerBound="1" eType="#//Carte"
         containment="true"/>
@@ -32,14 +63,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+        eType="#//Operateur"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="point" upperBound="-1"
         eType="#//point"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="point">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="bornelatitudepoint bornelongitudepoint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="bornelatitudepoint" value="&#xA;&#x9;&#x9;&#x9;(latitude &lt;= 180) and &#xA;&#x9;&#x9;&#x9;(latitude >=-180)"/>
+      <details key="bornelongitudepoint" value="&#xA;&#x9;&#x9;&#x9;(longitude &lt;= 90) and &#xA;&#x9;&#x9;&#x9;(longitude >= -90)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operateur">
+    <eLiterals name="plus"/>
+    <eLiterals name="moins" value="1"/>
+    <eLiterals name="clustering" value="2"/>
   </eClassifiers>
 </ecore:EPackage>
